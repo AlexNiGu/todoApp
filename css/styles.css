@@ -1,0 +1,130 @@
+body {
+    background-color: #fbfbfb!important;
+    font-family: 'Inter', sans-serif!important;
+}
+/* html, body {
+    height: 100%; 
+} */
+
+div {
+    border: 1px solid black;
+}
+
+.col {
+    border: 1px solid #DBDBDB;
+    box-shadow: 0px 0px 7px rgba(0, 0, 0, 0.25);
+    border-radius: 5px;
+}
+
+
+ /* ====================================== */
+.row-boostrap {
+    --bs-gutter-x: 1.5rem;
+    --bs-gutter-y: 0;
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: calc(-1 * var(--bs-gutter-y));
+    /* margin-right: calc(-.5 * var(--bs-gutter-x)); */
+    margin-left: calc(-.5 * var(--bs-gutter-x));
+}
+
+.row-boostrap > * {
+    flex-shrink: 0;
+    width: 100%;
+    max-width: 100%;
+    /* padding-right: calc(var(--bs-gutter-x) * .5); */
+    /* padding-left: calc(var(--bs-gutter-x) * .5); */
+    margin-top: var(--bs-gutter-y);
+}
+
+ /* ======================================= */
+
+.bg {
+
+    height: 100%;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background-color: rgb(94, 94, 94);
+    overflow-x: hidden;
+    transition: 0.5s;
+    padding-top: 60px;
+    background-image: url("../media/bg-image.jpg")!important;
+    background-repeat: no-repeat;
+    background-size: cover;
+    /* padding: 0!important;
+    margin: 0!important; */
+
+}
+
+.my-hr-white-border {
+    border: 2px solid #FFFFFF;
+    border-radius: 0px;
+    opacity: 1!important;
+    width: 100%;
+
+}
+
+.side-nav > h1{
+    word-wrap: break-word;
+    hyphens: auto;
+}
+.inputs-elements > div {
+    margin: 1em;
+}
+
+.inputs-elements > form > input, .inputs-elements > form > button  {
+    width: 100%!important;
+    display: flex;
+    background: #404243 !important;
+    mix-blend-mode: hard-light;
+    border-radius: 5px;
+    color: white !important;
+    border:none!important;
+    padding-right: 1em;
+    padding-left: 1em;
+    align-items: center;
+    justify-content: center;
+}
+form {
+    padding: 1em;
+}
+
+
+.inputs-elements > div:first-child > input::placeholder {
+    color: white;
+}
+
+.inputs-elements > ul {
+    margin: 0;
+    padding: 0;
+}
+.inputs-elements > ul > li {
+    list-style: none;
+    padding: 1em;
+    color: #D3E6FE;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 20px;
+    line-height: 24px;
+    word-wrap: break-word;
+    transition: 0.2s ease-in-out;
+    background: #40424300 !important;
+    mix-blend-mode: hard-light;
+}
+
+
+.inputs-elements > ul > li:hover {
+    background: #404243 !important;
+    mix-blend-mode: hard-light;
+    width: 100%!important;
+    transform: scale(1.05);
+}
+
+
+/*===================MAIN================================*/
+
+.main {
+    margin-left: 18em;
+}
