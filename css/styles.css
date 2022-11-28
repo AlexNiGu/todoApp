@@ -1,3 +1,13 @@
+:root {
+    /* This variable is going to be modified by js */
+    --progress-color: #45BA66;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    /* border: 1px solid black; */
+}
 body {
     background-color: #fbfbfb!important;
     font-family: 'Inter', sans-serif!important;
@@ -7,7 +17,7 @@ body {
 } */
 
 div {
-    border: 1px solid black;
+    /* border: 1px solid black; */
 }
 
 .col {
@@ -15,9 +25,17 @@ div {
     box-shadow: 0px 0px 7px rgba(0, 0, 0, 0.25);
     border-radius: 5px;
 }
+.myCanvas {
+    position: fixed;
+    border: 1px solid;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
 
+}
 
- /* ====================================== */
+/* ====================================== */
+/*BOOTSRAP CLASSES MODIFIED BY ME DELETING SOME PARAMS*/
 .row-boostrap {
     --bs-gutter-x: 1.5rem;
     --bs-gutter-y: 0;
@@ -30,15 +48,20 @@ div {
 
 .row-boostrap > * {
     flex-shrink: 0;
-    width: 100%;
+    /* width: 100%; */
     max-width: 100%;
     /* padding-right: calc(var(--bs-gutter-x) * .5); */
     /* padding-left: calc(var(--bs-gutter-x) * .5); */
     margin-top: var(--bs-gutter-y);
 }
 
- /* ======================================= */
+.myCol-lg-2 {
+    flex: 0 0 auto;
+    width: 16.66666667%;
+}
 
+ /* ======================================= */
+/* NAV SIDE CLASSES */
 .bg {
 
     height: 100%;
@@ -53,8 +76,6 @@ div {
     background-image: url("../media/bg-image.jpg")!important;
     background-repeat: no-repeat;
     background-size: cover;
-    /* padding: 0!important;
-    margin: 0!important; */
 
 }
 
@@ -123,8 +144,128 @@ form {
 }
 
 
-/*===================MAIN================================*/
+/*===================MAIN-TITTLE================================*/
 
 .main {
-    margin-left: 18em;
+    margin-left:  18em;
+    transition: 0.55s;
+}
+.main-tittle {
+    padding-top: 5%;
+}
+
+.myFontClass-1 {
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 64px;
+    line-height: 77px;
+
+    color: #212121;
+}
+.myFontClass-2 {
+    font-family: 'Inter';
+    font-style: italic;
+    font-weight: 200;
+    font-size: 20px;
+    line-height: 24px;
+
+    color: #212121;
+}
+.btn {
+    background: #F0F0F0;
+    border: 1px solid #D7D7D7;
+    box-shadow: 0px 0px 3px rgba(0, 0, 0, 0.15);
+    border-radius: 5px;
+    margin-left: 1em;
+}
+
+.hr-main {
+    border: 3px solid #212121!important;
+    opacity: 1!important;
+    /* transform: rotate(-0.11deg); */
+}
+
+
+
+/* ==================== CARD-PART ===============*/
+
+.myCard-tittle {
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 32px;
+    line-height: 39px;
+}
+.myCard-description {
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 300;
+    font-size: 16px;
+    line-height: 145.02%;
+}
+
+.main-content {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(30em, 1fr));
+}
+
+.card {
+    width: 100%!important;
+    height: 100%!important;
+    border-bottom: 5px solid var(--progress-color)!important;
+    box-shadow: 0px 0px 10px -1px rgba(0, 0, 0, 0.25);
+    border-radius: 5px;
+}
+
+.card-button-succes {
+    background-color: var(--progress-color)!important;
+    margin-left: 0!important;
+}
+
+.card-button-group {
+    display: flex;
+}
+.card:hover {
+    cursor: pointer;
+    animation: scale-card 1.2s infinite;
+}
+
+
+/* Make div-tittle (tittle and cross) of card flexbox and responsive */
+.div-group-card-tittle {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    /* justify-content: center; */
+}
+.div-group-card-tittle > h5 {
+    margin-right: auto;
+}
+
+
+@media (max-width: 1378px) {
+    .bg {
+      width: 5%;  
+    }
+    .bg > * {
+        display: none;
+    }
+    .main {
+        margin-left: 5%;
+    }
+}
+@media (max-width: 522px) {
+    .btn {
+        margin-top: 1em!important ;
+    }
+}
+
+/*============*/
+
+
+@keyframes scale-card {
+    0% {transform: scale(1)}
+    50% {transform: scale(1.1)}
+    100% {transform: scale(1);}
 }

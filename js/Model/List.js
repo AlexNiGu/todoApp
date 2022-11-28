@@ -2,7 +2,9 @@
 export class List {
 
     #name;
-
+    /**
+     * @author Alex Nieto
+     */
     constructor() {
 
     }

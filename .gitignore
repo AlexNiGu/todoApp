@@ -1,0 +1,4 @@
+#specific directory
+out/
+
+#ignoring specific file is just the name of the file

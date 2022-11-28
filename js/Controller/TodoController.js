@@ -1,10 +1,8 @@
 import { List } from "./List";
 import { Task } from "./Task";
-import { View } from "../Model/view";
+import { View } from "../View/view";
 
-/** 
- * @author Alex Nieto
-*/
+
 export class TodoController {
 
     #myTask;
@@ -18,7 +16,7 @@ export class TodoController {
     };
 
     /**
-     * @constructor of Task class
+     * @author Alex Nieto
      */
     constructor() {
         this.#myList = new List();

@@ -4,17 +4,33 @@ export class Task {
     #name;
     #date;
     #description;
-    #status;
-    #myElements = {
+    #status = 'In progress';
+    myElements = {
         name: this.#name,
         date: this.#date,
         description: this.#description,
         status: this.#status
     };
-
+    /**
+     * @author Alex Nieto
+     */
     constructor() {
+        
+    }
+
+
+
+    createTask(cardTitle,cardDate, cardDescription) {
+
+        return this.myElements = {
+            name: cardTitle,
+            data: cardDate,
+            description: cardDescription,
+            status: this.#status
+        }
 
     }
+
 
     // GETTER
     /**
