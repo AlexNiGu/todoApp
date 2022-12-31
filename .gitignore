@@ -1,4 +1,9 @@
 #specific directory
 out/
+node_modules/
 
 #ignoring specific file is just the name of the file
+main
+package-lock
+package
+promise.js
