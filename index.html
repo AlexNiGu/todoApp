@@ -1,224 +1,140 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
     <link href="css/styles.css" rel="stylesheet" />
     <!-- CSS only -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi"
+      crossorigin="anonymous"
+    />
     <!-- JavaScript Bundle with Popper -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3"
+      crossorigin="anonymous"
+    ></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
 
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap"
+      rel="stylesheet"
+    />
 
     <!-- FONT AWESOME -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css"></head>
-<body>
-    <div class="root">
-        <canvas id="myCanvas" class="myCanvas"></canvas>
-        <div class="row-boostrap">
-            <div class="myCol-lg-2 bg side-nav">
-                <div class="col-md-12 px-3 elemNav"><img src="media/user.png" alt="user-image" class=""/></div>
-                <h1 class="col-md-12 mt-3 px-4 text-white">Username</h1>
-                <hr class="my-hr-white-border mt-3 text-white">
-                <div class="inputs-elements">
-                    <form class="d-flex" role="search">
-                        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-                        <button class="btn btn-outline-success" type="submit">New &nbsp;<svg width="15" height="14" viewBox="0 0 15 14" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M7.5 5V9M9.66667 7H5.33333M14 7C14 7.78793 13.8319 8.56815 13.5052 9.2961C13.1786 10.0241 12.6998 10.6855 12.0962 11.2426C11.4926 11.7998 10.7761 12.2417 9.98744 12.5433C9.19883 12.8448 8.35359 13 7.5 13C6.64641 13 5.80117 12.8448 5.01256 12.5433C4.22394 12.2417 3.50739 11.7998 2.90381 11.2426C2.30022 10.6855 1.82144 10.0241 1.49478 9.2961C1.16813 8.56815 1 7.78793 1 7C1 5.4087 1.68482 3.88258 2.90381 2.75736C4.12279 1.63214 5.77609 1 7.5 1C9.22391 1 10.8772 1.63214 12.0962 2.75736C13.3152 3.88258 14 5.4087 14 7Z" stroke="#DDDDDD" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-                            </svg></button>
-                    </form>
-                    <ul>
-                        <li class="mt-5">Task board</li>
-                        <li class="mt-5">School Tasks</li>
-                        <li class="mt-5">Gym Schedule</li>
-                        <li class="mt-5">Books to read</li>
-                    </ul>
-                </div>
-            </div>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css"
+    />
+  </head>
+  <body>
+    <div class="root" id="root">
+      <canvas id="myCanvas" class="myCanvas"></canvas>
+      <div class="row-boostrap">
+        <div class="myCol-lg-2 bg imageBg side-nav">
+          <div class="col-md-12 px-3 elemNav">
+            <img src="img/user.png" alt="user-image" class="" />
+          </div>
+          <h1 class="col-md-12 mt-3 px-4 text-white">Username</h1>
+          <hr class="my-hr-white-border mt-3 text-white" />
+          <div class="inputs-elements">
+            <form class="d-flex p-2" role="search">
+              <input
+                id="listInput"
+                class="form-control me-2"
+                type="search"
+                placeholder="New List"
+                aria-label="Search"
+              />
+              <button
+                id="listButton"
+                class="btn btn-outline-success"
+                type="button"
+              >
+                Add &nbsp;<svg
+                  width="15"
+                  height="14"
+                  viewBox="0 0 15 14"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M7.5 5V9M9.66667 7H5.33333M14 7C14 7.78793 13.8319 8.56815 13.5052 9.2961C13.1786 10.0241 12.6998 10.6855 12.0962 11.2426C11.4926 11.7998 10.7761 12.2417 9.98744 12.5433C9.19883 12.8448 8.35359 13 7.5 13C6.64641 13 5.80117 12.8448 5.01256 12.5433C4.22394 12.2417 3.50739 11.7998 2.90381 11.2426C2.30022 10.6855 1.82144 10.0241 1.49478 9.2961C1.16813 8.56815 1 7.78793 1 7C1 5.4087 1.68482 3.88258 2.90381 2.75736C4.12279 1.63214 5.77609 1 7.5 1C9.22391 1 10.8772 1.63214 12.0962 2.75736C13.3152 3.88258 14 5.4087 14 7Z"
+                    stroke="#DDDDDD"
+                    stroke-width="1.5"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                </svg>
+              </button>
+            </form>
+            <ul id="list-container">
+              <!-- <li class="mt-5">Taks List</li> -->
+            </ul>
+          </div>
         </div>
+      </div>
 
-        <div class="main">
-            <div class="main-tittle">
-                <!-- Tittle of the MAIN CONTENT -->
-                <div class="row p-3 ms-5 me-5">
-                    <div class="col-md-12 ">
-                        <h1 class="myFontClass-1">Taks List</h1>
-                    </div>
-                    <div class="col-md-12">
-                        <nav class="navbar d-flex align-items-center">
-                            <p class="fst-italic fw-light justify-content-center pracheP myFontClass-2">This description can be modified by the person. This is just a place holder</p>
-                            <ul class="nav navbar-nav navbar-right me-5" id="ul-navbar-Right" >
-                                <li>
-                                    <button class="btn" type="button">Show: All&nbsp<svg width="10" height="9" viewBox="0 0 10 9" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                        <path d="M6.73205 8C5.96225 9.33333 4.03775 9.33333 3.26795 8L0.669872 3.5C-0.0999287 2.16667 0.862322 0.500001 2.40192 0.500001L7.59808 0.5C9.13768 0.5 10.0999 2.16667 9.33013 3.5L6.73205 8Z" fill="#373737"/>
-                                        </svg>
-                                    </button>
-                                    <button class="btn bg-dark text-light" type="button">New <svg width="21" height="21" viewBox="0 0 21 21" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                        <path d="M10.5 7.875V13.125M13.125 10.5H7.875M18.375 10.5C18.375 11.5342 18.1713 12.5582 17.7756 13.5136C17.3798 14.4691 16.7997 15.3372 16.0685 16.0685C15.3372 16.7997 14.4691 17.3798 13.5136 17.7756C12.5582 18.1713 11.5342 18.375 10.5 18.375C9.46584 18.375 8.44181 18.1713 7.48637 17.7756C6.53093 17.3798 5.6628 16.7997 4.93153 16.0685C4.20027 15.3372 3.6202 14.4691 3.22445 13.5136C2.82869 12.5582 2.625 11.5342 2.625 10.5C2.625 8.41142 3.45469 6.40838 4.93153 4.93153C6.40838 3.45469 8.41142 2.625 10.5 2.625C12.5886 2.625 14.5916 3.45469 16.0685 4.93153C17.5453 6.40838 18.375 8.41142 18.375 10.5Z" stroke="#F0F0F0" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-                                        </svg>
-                                    </button>
-                                </li>
-                            </ul>
-                        </nav>
-                        <hr class="hr-main">
-                </div>
+      <div class="main">
+        <div class="main-tittle">
+          <!-- Tittle of the MAIN CONTENT -->
+          <div class="row p-3 ms-5 me-5">
+            <div class="col-md-12" id="taskTitle">
+              <h1 class="myFontClass-1">Taks List</h1>
             </div>
-
-
-
-            <div class="main-content">
-                <div class="row p-3 ms-5 me-5">
-                    <div class="card">
-                        <div class="card-body">
-                          <div class="div-group-card-tittle">
-                            <h5 class="myCard-tittle">Card title</h5>
-                            <div>&#215;</div>
-                          </div>
-                          <h6 class="myCard-date mb-2 text-muted">October, 7, 2022 - October, 10, 2022</h6>
-                          <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                          <div class="card-button-group">
-                            <button class="card-button-succes btn text-light" type="button">Completed <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <path d="M6.33333 9.66667L8.33333 11.6667L11.6667 7M17 9C17 10.0506 16.7931 11.0909 16.391 12.0615C15.989 13.0321 15.3997 13.914 14.6569 14.6569C13.914 15.3997 13.0321 15.989 12.0615 16.391C11.0909 16.7931 10.0506 17 9 17C7.94943 17 6.90914 16.7931 5.93853 16.391C4.96793 15.989 4.08601 15.3997 3.34315 14.6569C2.60028 13.914 2.011 13.0321 1.60896 12.0615C1.20693 11.0909 1 10.0506 1 9C1 6.87827 1.84285 4.84344 3.34315 3.34315C4.84344 1.84285 6.87827 1 9 1C11.1217 1 13.1566 1.84285 14.6569 3.34315C16.1571 4.84344 17 6.87827 17 9Z" stroke="#F0F0F0" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-                                </svg>
-                            </button>
-                            <button class="btn" type="button">
-                                <svg width="17" height="17" viewBox="0 0 17 17" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <path fill-rule="evenodd" clip-rule="evenodd" d="M2.68578 2.08109C4.6067 1.75598 6.55155 1.59297 8.49978 1.59375C10.481 1.59375 12.4239 1.76092 14.3145 2.08109C14.6207 2.13397 14.8984 2.29359 15.0982 2.53164C15.298 2.76969 15.407 3.0708 15.406 3.38159V4.12109C15.4059 4.68462 15.1819 5.22504 14.7834 5.62346L10.4045 10.0024C10.3058 10.1011 10.2276 10.2183 10.1743 10.3472C10.1209 10.4762 10.0935 10.6144 10.0935 10.7539V12.8272C10.0936 13.2219 9.98384 13.6088 9.77641 13.9446C9.56897 14.2804 9.27212 14.5518 8.91911 14.7284L7.67457 15.3503C7.59358 15.3907 7.5036 15.4098 7.41316 15.4057C7.32273 15.4016 7.23485 15.3744 7.15786 15.3268C7.08086 15.2792 7.01731 15.2127 6.97324 15.1336C6.92917 15.0546 6.90603 14.9655 6.90603 14.875V10.7539C6.90578 10.4722 6.79368 10.2022 6.59436 10.0031L2.21686 5.62275C1.81832 5.22433 1.59436 4.68392 1.59424 4.12038V3.38159C1.59424 2.74621 2.04757 2.18946 2.68649 2.08109H2.68578Z" fill="#373737"/>
-                                </svg>
-                            </button>
-                          </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="row p-3 ms-5 me-5">
-                    <div class="card" style="width: 18rem;">
-                        <div class="card-body">
-                          <div class="div-group-card-tittle">
-                            <h5 class="myCard-tittle">Card title</h5>
-                            <div>&#215;</div>
-                          </div>
-                          <h6 class="myCard-date mb-2 text-muted">October, 7, 2022 - October, 10, 2022</h6>
-                          <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                          <div class="card-button-group">
-                            <button class="card-button-succes btn text-light" type="button">New <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <path d="M6.33333 9.66667L8.33333 11.6667L11.6667 7M17 9C17 10.0506 16.7931 11.0909 16.391 12.0615C15.989 13.0321 15.3997 13.914 14.6569 14.6569C13.914 15.3997 13.0321 15.989 12.0615 16.391C11.0909 16.7931 10.0506 17 9 17C7.94943 17 6.90914 16.7931 5.93853 16.391C4.96793 15.989 4.08601 15.3997 3.34315 14.6569C2.60028 13.914 2.011 13.0321 1.60896 12.0615C1.20693 11.0909 1 10.0506 1 9C1 6.87827 1.84285 4.84344 3.34315 3.34315C4.84344 1.84285 6.87827 1 9 1C11.1217 1 13.1566 1.84285 14.6569 3.34315C16.1571 4.84344 17 6.87827 17 9Z" stroke="#F0F0F0" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-                                </svg>
-                            <button class="btn" type="button"><svg width="17" height="17" viewBox="0 0 17 17" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <path fill-rule="evenodd" clip-rule="evenodd" d="M2.68578 2.08109C4.6067 1.75598 6.55155 1.59297 8.49978 1.59375C10.481 1.59375 12.4239 1.76092 14.3145 2.08109C14.6207 2.13397 14.8984 2.29359 15.0982 2.53164C15.298 2.76969 15.407 3.0708 15.406 3.38159V4.12109C15.4059 4.68462 15.1819 5.22504 14.7834 5.62346L10.4045 10.0024C10.3058 10.1011 10.2276 10.2183 10.1743 10.3472C10.1209 10.4762 10.0935 10.6144 10.0935 10.7539V12.8272C10.0936 13.2219 9.98384 13.6088 9.77641 13.9446C9.56897 14.2804 9.27212 14.5518 8.91911 14.7284L7.67457 15.3503C7.59358 15.3907 7.5036 15.4098 7.41316 15.4057C7.32273 15.4016 7.23485 15.3744 7.15786 15.3268C7.08086 15.2792 7.01731 15.2127 6.97324 15.1336C6.92917 15.0546 6.90603 14.9655 6.90603 14.875V10.7539C6.90578 10.4722 6.79368 10.2022 6.59436 10.0031L2.21686 5.62275C1.81832 5.22433 1.59436 4.68392 1.59424 4.12038V3.38159C1.59424 2.74621 2.04757 2.18946 2.68649 2.08109H2.68578Z" fill="#373737"/>
-                                </svg>
-                            </button>
-                          </div>
-                        </button>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="row p-3 ms-5 me-5">
-                    <div class="card" style="width: 18rem;">
-                        <div class="card-body">
-                          <div class="div-group-card-tittle">
-                            <h5 class="myCard-tittle">Card title</h5>
-                            <div>&#215;</div>
-                          </div>
-                          <h6 class="myCard-date mb-2 text-muted">October, 7, 2022 - October, 10, 2022</h6>
-                          <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                          <div class="card-button-group">
-                            <button class="card-button-succes btn text-light" type="button">New <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <path d="M6.33333 9.66667L8.33333 11.6667L11.6667 7M17 9C17 10.0506 16.7931 11.0909 16.391 12.0615C15.989 13.0321 15.3997 13.914 14.6569 14.6569C13.914 15.3997 13.0321 15.989 12.0615 16.391C11.0909 16.7931 10.0506 17 9 17C7.94943 17 6.90914 16.7931 5.93853 16.391C4.96793 15.989 4.08601 15.3997 3.34315 14.6569C2.60028 13.914 2.011 13.0321 1.60896 12.0615C1.20693 11.0909 1 10.0506 1 9C1 6.87827 1.84285 4.84344 3.34315 3.34315C4.84344 1.84285 6.87827 1 9 1C11.1217 1 13.1566 1.84285 14.6569 3.34315C16.1571 4.84344 17 6.87827 17 9Z" stroke="#F0F0F0" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-                                </svg>
-                            <button class="btn" type="button"><svg width="17" height="17" viewBox="0 0 17 17" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <path fill-rule="evenodd" clip-rule="evenodd" d="M2.68578 2.08109C4.6067 1.75598 6.55155 1.59297 8.49978 1.59375C10.481 1.59375 12.4239 1.76092 14.3145 2.08109C14.6207 2.13397 14.8984 2.29359 15.0982 2.53164C15.298 2.76969 15.407 3.0708 15.406 3.38159V4.12109C15.4059 4.68462 15.1819 5.22504 14.7834 5.62346L10.4045 10.0024C10.3058 10.1011 10.2276 10.2183 10.1743 10.3472C10.1209 10.4762 10.0935 10.6144 10.0935 10.7539V12.8272C10.0936 13.2219 9.98384 13.6088 9.77641 13.9446C9.56897 14.2804 9.27212 14.5518 8.91911 14.7284L7.67457 15.3503C7.59358 15.3907 7.5036 15.4098 7.41316 15.4057C7.32273 15.4016 7.23485 15.3744 7.15786 15.3268C7.08086 15.2792 7.01731 15.2127 6.97324 15.1336C6.92917 15.0546 6.90603 14.9655 6.90603 14.875V10.7539C6.90578 10.4722 6.79368 10.2022 6.59436 10.0031L2.21686 5.62275C1.81832 5.22433 1.59436 4.68392 1.59424 4.12038V3.38159C1.59424 2.74621 2.04757 2.18946 2.68649 2.08109H2.68578Z" fill="#373737"/>
-                                </svg>
-                            </button>
-                          </div>
-                        </button>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="row p-3 ms-5 me-5">
-                    <div class="card" style="width: 18rem;">
-                        <div class="card-body">
-                          <div class="div-group-card-tittle">
-                            <h5 class="myCard-tittle">Card title</h5>
-                            <div>&#215;</div>
-                          </div>
-                          <h6 class="myCard-date mb-2 text-muted">October, 7, 2022 - October, 10, 2022</h6>
-                          <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                          <div class="card-button-group">
-                            <button class="card-button-succes btn text-light" type="button">New <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <path d="M6.33333 9.66667L8.33333 11.6667L11.6667 7M17 9C17 10.0506 16.7931 11.0909 16.391 12.0615C15.989 13.0321 15.3997 13.914 14.6569 14.6569C13.914 15.3997 13.0321 15.989 12.0615 16.391C11.0909 16.7931 10.0506 17 9 17C7.94943 17 6.90914 16.7931 5.93853 16.391C4.96793 15.989 4.08601 15.3997 3.34315 14.6569C2.60028 13.914 2.011 13.0321 1.60896 12.0615C1.20693 11.0909 1 10.0506 1 9C1 6.87827 1.84285 4.84344 3.34315 3.34315C4.84344 1.84285 6.87827 1 9 1C11.1217 1 13.1566 1.84285 14.6569 3.34315C16.1571 4.84344 17 6.87827 17 9Z" stroke="#F0F0F0" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-                                </svg>
-                            <button class="btn" type="button"><svg width="17" height="17" viewBox="0 0 17 17" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <path fill-rule="evenodd" clip-rule="evenodd" d="M2.68578 2.08109C4.6067 1.75598 6.55155 1.59297 8.49978 1.59375C10.481 1.59375 12.4239 1.76092 14.3145 2.08109C14.6207 2.13397 14.8984 2.29359 15.0982 2.53164C15.298 2.76969 15.407 3.0708 15.406 3.38159V4.12109C15.4059 4.68462 15.1819 5.22504 14.7834 5.62346L10.4045 10.0024C10.3058 10.1011 10.2276 10.2183 10.1743 10.3472C10.1209 10.4762 10.0935 10.6144 10.0935 10.7539V12.8272C10.0936 13.2219 9.98384 13.6088 9.77641 13.9446C9.56897 14.2804 9.27212 14.5518 8.91911 14.7284L7.67457 15.3503C7.59358 15.3907 7.5036 15.4098 7.41316 15.4057C7.32273 15.4016 7.23485 15.3744 7.15786 15.3268C7.08086 15.2792 7.01731 15.2127 6.97324 15.1336C6.92917 15.0546 6.90603 14.9655 6.90603 14.875V10.7539C6.90578 10.4722 6.79368 10.2022 6.59436 10.0031L2.21686 5.62275C1.81832 5.22433 1.59436 4.68392 1.59424 4.12038V3.38159C1.59424 2.74621 2.04757 2.18946 2.68649 2.08109H2.68578Z" fill="#373737"/>
-                                </svg>
-                            </button>
-                          </div>
-                        </button>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="row p-3 ms-5 me-5">
-                    <div class="card" style="width: 18rem;">
-                        <div class="card-body">
-                          <div class="div-group-card-tittle">
-                            <h5 class="myCard-tittle">Card title</h5>
-                            <div>&#215;</div>
-                          </div>
-                          <h6 class="myCard-date mb-2 text-muted">October, 7, 2022 - October, 10, 2022</h6>
-                          <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                          <div class="card-button-group">
-                            <button class="card-button-succes btn text-light" type="button">New <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <path d="M6.33333 9.66667L8.33333 11.6667L11.6667 7M17 9C17 10.0506 16.7931 11.0909 16.391 12.0615C15.989 13.0321 15.3997 13.914 14.6569 14.6569C13.914 15.3997 13.0321 15.989 12.0615 16.391C11.0909 16.7931 10.0506 17 9 17C7.94943 17 6.90914 16.7931 5.93853 16.391C4.96793 15.989 4.08601 15.3997 3.34315 14.6569C2.60028 13.914 2.011 13.0321 1.60896 12.0615C1.20693 11.0909 1 10.0506 1 9C1 6.87827 1.84285 4.84344 3.34315 3.34315C4.84344 1.84285 6.87827 1 9 1C11.1217 1 13.1566 1.84285 14.6569 3.34315C16.1571 4.84344 17 6.87827 17 9Z" stroke="#F0F0F0" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-                                </svg>
-                            <button class="btn" type="button"><svg width="17" height="17" viewBox="0 0 17 17" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <path fill-rule="evenodd" clip-rule="evenodd" d="M2.68578 2.08109C4.6067 1.75598 6.55155 1.59297 8.49978 1.59375C10.481 1.59375 12.4239 1.76092 14.3145 2.08109C14.6207 2.13397 14.8984 2.29359 15.0982 2.53164C15.298 2.76969 15.407 3.0708 15.406 3.38159V4.12109C15.4059 4.68462 15.1819 5.22504 14.7834 5.62346L10.4045 10.0024C10.3058 10.1011 10.2276 10.2183 10.1743 10.3472C10.1209 10.4762 10.0935 10.6144 10.0935 10.7539V12.8272C10.0936 13.2219 9.98384 13.6088 9.77641 13.9446C9.56897 14.2804 9.27212 14.5518 8.91911 14.7284L7.67457 15.3503C7.59358 15.3907 7.5036 15.4098 7.41316 15.4057C7.32273 15.4016 7.23485 15.3744 7.15786 15.3268C7.08086 15.2792 7.01731 15.2127 6.97324 15.1336C6.92917 15.0546 6.90603 14.9655 6.90603 14.875V10.7539C6.90578 10.4722 6.79368 10.2022 6.59436 10.0031L2.21686 5.62275C1.81832 5.22433 1.59436 4.68392 1.59424 4.12038V3.38159C1.59424 2.74621 2.04757 2.18946 2.68649 2.08109H2.68578Z" fill="#373737"/>
-                                </svg>
-                            </button>
-                          </div>
-                        </button>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="row p-3 ms-5 me-5">
-                    <div class="card" style="width: 18rem;">
-                        <div class="card-body">
-                          <div class="div-group-card-tittle">
-                            <h5 class="myCard-tittle">Card title</h5>
-                            <div>&#215;</div>
-                          </div>
-                          <h6 class="myCard-date mb-2 text-muted">October, 7, 2022 - October, 10, 2022</h6>
-                          <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                          <div class="card-button-group">
-                            <button class="card-button-succes btn text-light" type="button">New <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <path d="M6.33333 9.66667L8.33333 11.6667L11.6667 7M17 9C17 10.0506 16.7931 11.0909 16.391 12.0615C15.989 13.0321 15.3997 13.914 14.6569 14.6569C13.914 15.3997 13.0321 15.989 12.0615 16.391C11.0909 16.7931 10.0506 17 9 17C7.94943 17 6.90914 16.7931 5.93853 16.391C4.96793 15.989 4.08601 15.3997 3.34315 14.6569C2.60028 13.914 2.011 13.0321 1.60896 12.0615C1.20693 11.0909 1 10.0506 1 9C1 6.87827 1.84285 4.84344 3.34315 3.34315C4.84344 1.84285 6.87827 1 9 1C11.1217 1 13.1566 1.84285 14.6569 3.34315C16.1571 4.84344 17 6.87827 17 9Z" stroke="#F0F0F0" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-                                </svg>
-                            <button class="btn" type="button"><svg width="17" height="17" viewBox="0 0 17 17" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <path fill-rule="evenodd" clip-rule="evenodd" d="M2.68578 2.08109C4.6067 1.75598 6.55155 1.59297 8.49978 1.59375C10.481 1.59375 12.4239 1.76092 14.3145 2.08109C14.6207 2.13397 14.8984 2.29359 15.0982 2.53164C15.298 2.76969 15.407 3.0708 15.406 3.38159V4.12109C15.4059 4.68462 15.1819 5.22504 14.7834 5.62346L10.4045 10.0024C10.3058 10.1011 10.2276 10.2183 10.1743 10.3472C10.1209 10.4762 10.0935 10.6144 10.0935 10.7539V12.8272C10.0936 13.2219 9.98384 13.6088 9.77641 13.9446C9.56897 14.2804 9.27212 14.5518 8.91911 14.7284L7.67457 15.3503C7.59358 15.3907 7.5036 15.4098 7.41316 15.4057C7.32273 15.4016 7.23485 15.3744 7.15786 15.3268C7.08086 15.2792 7.01731 15.2127 6.97324 15.1336C6.92917 15.0546 6.90603 14.9655 6.90603 14.875V10.7539C6.90578 10.4722 6.79368 10.2022 6.59436 10.0031L2.21686 5.62275C1.81832 5.22433 1.59436 4.68392 1.59424 4.12038V3.38159C1.59424 2.74621 2.04757 2.18946 2.68649 2.08109H2.68578Z" fill="#373737"/>
-                                </svg>
-                            </button>
-                          </div>
-                        </button>
-                        </div>
-                    </div>
-                </div>
-
+            <div class="col-md-12">
+              <nav class="navbar d-flex align-items-center">
+                <p class="fst-italic fw-light justify-content-center pracheP myFontClass-2">This description can be modified by the person. This is just a place holder</p>
+                <ul class="nav navbar-nav navbar-right me-5" id="ul-navbar-Right">
+                  <li>
+                    <button class="btn" type="button">
+                      Show: All&nbsp<svg
+                        width="10"
+                        height="9"
+                        viewBox="0 0 10 9"
+                        fill="none"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          d="M6.73205 8C5.96225 9.33333 4.03775 9.33333 3.26795 8L0.669872 3.5C-0.0999287 2.16667 0.862322 0.500001 2.40192 0.500001L7.59808 0.5C9.13768 0.5 10.0999 2.16667 9.33013 3.5L6.73205 8Z"
+                          fill="#373737"
+                        />
+                      </svg>
+                    </button>
+                    <button class="btn bg-dark text-light" type="button" id="newTask">
+                      New
+                      <svg
+                        width="21"
+                        height="21"
+                        viewBox="0 0 21 21"
+                        fill="none"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          d="M10.5 7.875V13.125M13.125 10.5H7.875M18.375 10.5C18.375 11.5342 18.1713 12.5582 17.7756 13.5136C17.3798 14.4691 16.7997 15.3372 16.0685 16.0685C15.3372 16.7997 14.4691 17.3798 13.5136 17.7756C12.5582 18.1713 11.5342 18.375 10.5 18.375C9.46584 18.375 8.44181 18.1713 7.48637 17.7756C6.53093 17.3798 5.6628 16.7997 4.93153 16.0685C4.20027 15.3372 3.6202 14.4691 3.22445 13.5136C2.82869 12.5582 2.625 11.5342 2.625 10.5C2.625 8.41142 3.45469 6.40838 4.93153 4.93153C6.40838 3.45469 8.41142 2.625 10.5 2.625C12.5886 2.625 14.5916 3.45469 16.0685 4.93153C17.5453 6.40838 18.375 8.41142 18.375 10.5Z"
+                          stroke="#F0F0F0"
+                          stroke-width="1.5"
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                        />
+                      </svg>
+                    </button>
+                  </li>
+                </ul>
+              </nav>
+              <hr class="hr-main" />
             </div>
-
-
+          </div>
         </div>
+        <div class="main-content"></div>
+      </div>
     </div>
-
-
-
     <script type="module" src="js/main.js"></script>
-</body>
+  </body>
 </html>

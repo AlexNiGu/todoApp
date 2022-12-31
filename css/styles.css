@@ -63,7 +63,6 @@ div {
  /* ======================================= */
 /* NAV SIDE CLASSES */
 .bg {
-
     height: 100%;
     position: fixed;
     z-index: 1;
@@ -73,10 +72,15 @@ div {
     overflow-x: hidden;
     transition: 0.5s;
     padding-top: 60px;
-    background-image: url("../media/bg-image.jpg")!important;
     background-repeat: no-repeat;
     background-size: cover;
 
+}
+
+.imageBg {
+    background-image: url("../img/bg-image.jpg")!important;
+    background-repeat: no-repeat;
+    background-size: cover;
 }
 
 .my-hr-white-border {
@@ -131,10 +135,12 @@ form {
     line-height: 24px;
     word-wrap: break-word;
     transition: 0.2s ease-in-out;
-    background: #40424300 !important;
     mix-blend-mode: hard-light;
 }
 
+.list-background {
+    background: #404243 !important;
+}
 
 .inputs-elements > ul > li:hover {
     background: #404243 !important;
@@ -142,6 +148,7 @@ form {
     width: 100%!important;
     transform: scale(1.05);
 }
+
 
 
 /*===================MAIN-TITTLE================================*/
@@ -214,7 +221,8 @@ form {
     width: 100%!important;
     height: 100%!important;
     border-bottom: 5px solid var(--progress-color)!important;
-    box-shadow: 0px 0px 10px -1px rgba(0, 0, 0, 0.25);
+    /* box-shadow: 0px 0px 10px -1px rgba(0, 0, 0, 0.25); */
+    box-shadow: 0px 2px 1px -1px rgb(0 0 0 / 20%), 0px 1px 1px 0px rgb(0 0 0 / 14%), 0px 1px 3px 0px rgb(0 0 0 / 12%);
     border-radius: 5px;
 }
 
@@ -244,6 +252,66 @@ form {
 }
 
 
+
+/* ==================== FORM-PART ===============*/
+
+.form-task-creat {
+    box-shadow: 0px 2px 1px -1px rgb(0 0 0 / 20%), 0px 1px 1px 0px rgb(0 0 0 / 14%), 0px 1px 3px 0px rgb(0 0 0 / 12%);
+    border-radius: 5px;
+    max-width: 456px;
+    max-height: 600px;
+    width: 100vw;
+    transition: all 0.3s ease;
+    display: flex;
+    background-color: white;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 9999;
+    padding: 10px;
+    text-align: center;
+}
+
+form {
+    padding: 0!important;
+}
+
+.form-bg {
+    background-color: white;
+    padding: 3em;
+}
+form > div > h1 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+}
+.myForm {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+}
+.myForm input {
+    border-bottom: 3px solid #0151A0;
+
+}
+
+#taskTextarea {
+    border-bottom: 3px solid #0151A0;
+}
+
+.form-control:focus {
+    color: #212529;
+    background-color: #fff;
+    border-color: #0151A0!important;
+    outline: 0;
+    box-shadow: none!important;
+}
+
+
+
+
+
 @media (max-width: 1378px) {
     .bg {
       width: 5%;  
@@ -263,9 +331,9 @@ form {
 
 /*============*/
 
-
+/* 
 @keyframes scale-card {
     0% {transform: scale(1)}
     50% {transform: scale(1.1)}
     100% {transform: scale(1);}
-}
+} */

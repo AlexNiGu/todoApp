@@ -1,63 +1,58 @@
+export class Task 
+{
+  #status = "In progress";
+  #title;
+  #date;
+  #description;
+  #idTask;
+  #list;
+  myElements = {};
+  lenghTasks;
 
-export class Task {
-    
-    #name;
-    #date;
-    #description;
-    #status = 'In progress';
-    myElements = {
-        name: this.#name,
+
+  /**
+   * @author Alex Nieto
+   */
+  constructor() {}
+
+  getTask() 
+  {
+    return (
+      this.myElements = {
+        id: this.#idTask,
+        title: this.#title,
         date: this.#date,
         description: this.#description,
-        status: this.#status
-    };
-    /**
-     * @author Alex Nieto
-     */
-    constructor() {
-        
-    }
+        status: this.#status,
+        list: this.#list,
+      }
+    );
+  }
 
 
+  setTitle(value) 
+  {
+    if (typeof value == 'string' ) this.#title = value;
+  }
 
-    createTask(cardTitle,cardDate, cardDescription) {
+  setDate(value) 
+  {
+    if (typeof value == 'string' ) this.#date = value;
+  }
 
-        return this.myElements = {
-            name: cardTitle,
-            data: cardDate,
-            description: cardDescription,
-            status: this.#status
-        }
+  setList(value)
+  {
+    if (typeof value == 'string') this.#list = value;
+  }
 
-    }
+  setDescription(value) 
+  {
+    if (typeof value == 'string' ) this.#description = value;
+  }
 
-
-    // GETTER
-    /**
-     * 
-     * @returns {dictionary} A dictionary of all tasks elements
-     */
-    getValues() {
-        return this.#myElements;
-    }
-
-    // SET VALUES
-    /**
-     * 
-     * @param {string} pName name of the task
-     * @param {Date} pDate  date of the task (when it's started and then it's finished)
-     * @param {string} pDescription description of the tasks
-    */
-    setValues(pName, pDate, pDescription) {
-        this.#name = pName;
-        this.#date = pDate;
-        this.#description = pDescription;
-        this.#status = "In progress";
-    }
-
-    removeValues() {
-
-    }
-
-
+  setID()
+  {
+    // this.#idTask = Math.floor(Math.random() * Math.floor(Math.random() * Date.now()));
+    this.#idTask = crypto.randomUUID(); // Crypto API give you unique id
+  }
 }

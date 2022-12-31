@@ -25,9 +25,7 @@ export class List {
         this.#name = value;
     }
 
-    removeValue() {
 
-    }
 
 
 }

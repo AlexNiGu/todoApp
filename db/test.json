@@ -1,6 +1,6 @@
 {
     "myTasks": [
-        {"date": "dsa", "name": "hola"},
-        {"date": "dsa2", "name": "hola2"}
+        {"name": "tare1", "date": "das1", "description": "Description of everything" },
+        {"name": "tarea2", "date": "das1", "description": "Description of everything" }
     ]
 }
