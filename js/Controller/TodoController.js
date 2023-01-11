@@ -49,9 +49,10 @@ export class TodoController {
 
       })
       document.getElementById("taskTitle").innerHTML = `<h1 class="myFontClass-1">${this.allTasks[0].list}</h1>`;
-      document.querySelector('.listElem').classList.add('list-background');
+      if (document.querySelector('.listElem')) {
+        document.querySelector('.listElem').classList.add('list-background');
+      }
     }
-
 
     this.#listener('task');
 
