@@ -150,6 +150,15 @@ form {
 }
 
 
+.edit-icon {
+    color: white;
+    transition: .5s;
+}
+
+.edit-icon:hover {
+    transform: scale(1.2);
+}
+
 
 /*===================MAIN-TITTLE================================*/
 

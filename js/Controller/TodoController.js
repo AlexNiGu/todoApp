@@ -48,7 +48,7 @@ export class TodoController {
         }
 
       })
-      document.getElementById("taskTitle").innerHTML = `<h1 class="myFontClass-1">${this.allTasks[0].list}</h1>`;
+      // document.getElementById("taskTitle").innerHTML = `<h1 class="myFontClass-1">${this.allTasks[0].list}</h1>`;
       if (document.querySelector('.listElem')) {
         document.querySelector('.listElem').classList.add('list-background');
       }
@@ -87,14 +87,37 @@ export class TodoController {
         })
 
 
+        // Edit list Name
+        if (document.querySelector('.listElem')) {
+        }
+        
+        
+        
         // Selection of list of Tasks
         document.getElementById('list-container').addEventListener('click', (event)=> {
-         if (event.target.classList[1] == 'listElem') {
-          this.changeList(event.target.textContent);
-          document.querySelectorAll('.listElem').forEach(task => {if (task.classList.length > 2) task.classList.remove('list-background')})
-          event.target.classList.add('list-background');
-          document.querySelector('.myFontClass-1').textContent = event.target.textContent;
-         }
+          if (event.target.classList[1] == 'listElem') {
+            document.querySelectorAll('.listElem').forEach(value => {
+              if (value.attributes.contentEditable.value == 'true') {
+                value.addEventListener('input', (event)=> {
+                  console.log(event.target.textContent)
+                  document.querySelector('.myFontClass-1').textContent = event.target.textContent;
+                });
+
+              }
+            })
+            
+            // TODOO !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+            // document.querySelectorAll('.edit-icon').forEach(icon => {
+            //   icon.addEventListener('click', (event)=> {
+            //     event.target.parentElement.attributes.contentEditable.value = true;
+            //   })
+            // })
+            this.changeList(event.target.textContent);
+            document.querySelectorAll('.listElem').forEach(task => {if (task.classList.length > 2) task.classList.remove('list-background')})
+            event.target.classList.add('list-background');
+            document.querySelector('.myFontClass-1').textContent = event.target.textContent;
+          } 
         })
 
         break;
@@ -145,7 +168,7 @@ export class TodoController {
     this.mydb.removeFromDB(task.id);
   }
 
-  
+
 
   // deleteList() {
   //   //code to add new list goes here

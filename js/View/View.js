@@ -92,11 +92,17 @@ export class View {
         break;
       case "list":
         let listContainer = document.getElementById('list-container');
+        let image = document.createElement("img");
+        image.setAttribute("src", "img/edit.svg");
+        image.setAttribute("class", "ms-3 edit-icon");
         let listElement = document.createElement("li");
+        listElement.setAttribute("contenteditable", true);
         listElement.setAttribute("class", "mt-5 listElem");
         if (data == 'Taks List')  listElement.setAttribute("class", "mt-5 listElem list-background");
         let textNode = document.createTextNode(data);
+
         listElement.appendChild(textNode);
+        // listElement.appendChild(image);
 
 
         listContainer.innerHTML += listElement.outerHTML
