@@ -46,7 +46,6 @@ export class TodoController {
         if (task.list == this.allTasks[0].list) {
           this.myView.render("task", task);
         }
-
       })
       // document.getElementById("taskTitle").innerHTML = `<h1 class="myFontClass-1">${this.allTasks[0].list}</h1>`;
       if (document.querySelector('.listElem')) {
@@ -55,7 +54,6 @@ export class TodoController {
     }
 
     this.#listener('task');
-
   }
 
   changeList(listName='') {
@@ -90,7 +88,6 @@ export class TodoController {
         // Edit list Name
         if (document.querySelector('.listElem')) {
         }
-        
         
         
         // Selection of list of Tasks
@@ -167,6 +164,8 @@ export class TodoController {
     task.parentNode.removeChild(task);
     this.mydb.removeFromDB(task.id);
   }
+
+
 
 
 
